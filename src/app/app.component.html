@@ -12,10 +12,23 @@
 					   [checked]="item.comprado"
 					   (change)="markCheckbox($event, item.produto)"> 
 				{{item.produto}} - {{item.quantidade}}
+				<button (click)="editarItem(item.produto)">Editar</button>
 				<button (click)="deleteItem(item.produto)">Deletar</button>
 			</li>
 		}
-
-		<label for=""></label>
 	}
+	<br>
+	<label>
+		Produto:
+		<input type="text" (input)="name($event)">
+	</label>
+	<br>
+	<br>
+	<label>
+		Quantidade:
+		<input type="text" (input)="qtd($event)">
+	</label>
+	<br>
+	<br>
+	<button (click)="adicionarProuto()">Enviar</button>
 </ul>
